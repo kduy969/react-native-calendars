@@ -76,6 +76,20 @@ class Day extends Component {
       containerStyle.push(this.style.today);
       textStyle.push(this.style.todayText);
     }
+
+    if (marking.customStyles && typeof marking.customStyles === 'object') {
+      const customStyles = marking.customStyles;
+      if (customStyles.container) {
+        if (customStyles.container.borderRadius === undefined) {
+          customStyles.container.borderRadius = 16;
+        }
+        containerStyle.push(customStyles.container);
+      }
+      if (customStyles.text) {
+        textStyle.push(customStyles.text);
+      }
+    }
+
     return (
       <TouchableOpacity
         style={containerStyle}

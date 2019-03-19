@@ -84,6 +84,8 @@ class Day extends Component {
         activeOpacity={marking.activeOpacity}
         disabled={marking.disableTouchEvent}
       >
+        <Text allowFontScaling={false} style={textStyle}>{String(this.props.children)}</Text>
+        {dot}
       </TouchableOpacity>
     );
   }
